@@ -1,0 +1,4 @@
+GitHub's CEO said young engineers frequently bring along fresh perspectives.
+They're more likely to have been early adopters of AI, in particular, Thomas Dohmke told "The Pragmatic Engineer."
+You still have to develop "craft" in engineering, the CEO added, but AI will form part of the process, going forward.
+In the age of AI coding, GitHub's CEO says he's still a believer that junior engineers are of great value to tech companies. Just don't be surprised if you're asked to showcase your prompt-engineering skills in a job interview.
