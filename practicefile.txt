@@ -1,0 +1,33 @@
+import strings
+def substrings_in_string(big_string, substrings):
+    for substring in substrings:
+        if string.find(big_string, substring) != -1:
+            return substring
+    print big_string
+    return np.nan
+Using this iteratively I was able to get a full list of titles.
+
+title_list=['Mrs', 'Mr', 'Master', 'Miss', 'Major', 'Rev',
+                    'Dr', 'Ms', 'Mlle','Col', 'Capt', 'Mme', 'Countess',
+                    'Don', 'Jonkheer']
+Now that I have them, I recombine them to the four categories.
+
+df['Title']=df['Name'].map(lambda x: substrings_in_string(x, title_list))
+ 
+#replacing all titles with mr, mrs, miss, master
+def replace_titles(x):
+    title=x['Title']
+    if title in ['Don', 'Major', 'Capt', 'Jonkheer', 'Rev', 'Col']:
+        return 'Mr'
+    elif title in ['Countess', 'Mme']:
+        return 'Mrs'
+    elif title in ['Mlle', 'Ms']:
+        return 'Miss'
+    elif title =='Dr':
+        if x['Sex']=='Male':
+            return 'Mr'
+        else:
+            return 'Mrs'
+    else:
+        return title
+df['Title']=df.apply(replace_titles, axis=1)
